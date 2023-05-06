@@ -18,7 +18,10 @@ def pre_format_html_hook(url, html):
         if re.search(h['url'], url):
             if not h['actions']:
                 continue
-            log.info("Applying %d actions to %s..." % (len(h['actions']), url))
+
+            log.info("Applying %d pre_format_html actions to %s..."
+                     % (len(h['actions']), url))
+
             for a in h['actions']:
                 if soup is None:
                     # Parse html only if necessary
