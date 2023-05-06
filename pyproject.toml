@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=45", "setuptools_scm[toml]>=6.2"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "elinks_hooks"
+version = "0.0.0"
+authors = [
+    {name = "Adrian Vollmer", email = "computerfluesterer@protonmail.com"},
+]
+description = "Kind of like Greasemonkey, but for elinks and in Python"
+readme = "README.md"
+requires-python = ">=3.7"
+keywords = ['elinks']
+license = {text = "MIT License"}
+classifiers = [
+    "Operating System :: POSIX :: Linux",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+]
+dependencies = [
+    'beautifulsoup4',
+    'pyxdg',
+    'pyyaml',
+    'lxml',
+]
+
+[tool.setuptools]
+packages = ["elinks_hooks"]
+
+[project.urls]
+"Homepage" = "https://github.com/AdrianVollmer/elinks-hooks"
+"Bug Tracker" =  "https://github.com/AdrianVollmer/elinks-hooks/issues"

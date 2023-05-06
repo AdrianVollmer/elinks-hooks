@@ -1,0 +1,69 @@
+pre_format_html:
+  - url: .*
+    actions:
+      - name: remove
+        args:
+          selector: "link, nav, script, iframe"
+
+  - url: www.heise.de
+    actions:
+      - name: remove
+        args:
+          selector: 'div.a-inline-textbox__content-container, div.a-article-header__service, header.a-box__header, header.header, article#meldung, footer, section.article-sidebar, div.a-u-inline'
+
+  - url: www.nytimes.com
+    actions:
+      - name: remove
+        args:
+          selector: 'footer, header, svg, iframe, div[data-testid="share-tools, div#top-wrapper, div#bottom-wrapper'
+
+  - url: www.golem.de
+    actions:
+      - name: remove
+        args:
+          selector: 'ul.social-tools, section#job-market, div#breadcrumbs, div.tags, div.gbox_affiliate, figure'
+      - name: delete_before
+        args:
+          selector: article
+      - name: delete_after
+        args:
+          selector: article
+
+  - url: www.faz.net
+    actions:
+      - name: remove
+        args:
+          selector: 'div.sld-TeaserMore_LeftColumn, div.atc-ContainerInfo, button.lay-Base_Close'
+      - name: delete_before
+        args:
+          selector: div.Artikel
+      - name: delete_after
+        args:
+          selector: 'div.sld-TeaserMore_LeftColumn'
+
+  - url: 'www.spiegel.de/$'
+    actions:
+      - name: remove
+        args:
+          selector: header
+      - name: add_border
+        args:
+          selector: section.mt-12
+
+  - url: 'www.spiegel.de/.+'
+    actions:
+      - name: select
+        args:
+          selector: article
+      - name: remove
+        args:
+          selector: 'section[data-app-hidden="true"], footer, header, aside, figcaption, section[data-component="FurtherReads"], section.clear-both'
+      - name: delete_before
+        args:
+          selector: 'section.relative'
+
+  - url: '.wikipedia.org/wiki'
+    actions:
+      - name: remove
+        args:
+          selector: 'a.mw-jump-link, input#toctogglecheckbox, div#mw-navigation, div#mw-hidden-catlinks, ul#footer-places, ul#footer-icons, div#p-search'

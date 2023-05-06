@@ -1,0 +1,13 @@
+pre_format_html:
+  - url: news.ycombinator.com
+    actions:
+      - name: remove
+        args:
+          selector: 'img[src="y18.gif"], form, div.reply'
+      - name: add_border
+        args:
+          selector: 'table.itemlist, table.comment-tree'
+      - name: add_padding
+        args:
+          selector: 'table.comment-tree > tr td img'
+
