@@ -8,14 +8,10 @@ Installation
 ------------
 
 ```console
-$ pip install -e .
+$ git clone https://github.com/AdrianVollmer/elinks-hooks.git
+$ ln -s $(pwd)/elinks-hooks/elinks_hooks ~/config/elinks/
 $ echo 'from elinks_hooks import *  # noqa' > ~/.config/elinks/hooks.py
 ```
-
-If pip complains about externally managed environments, supply the
-`--break-system-packages`. It will most likely not break anything, and
-the suggested solution (virtual environments) won't work for this usecase.
-Just don't be root.
 
 Note: elinks must be compiled with the Python scripting feature
 (`./configure --with-python`). You can check with `elinks --version | grep Python`.
