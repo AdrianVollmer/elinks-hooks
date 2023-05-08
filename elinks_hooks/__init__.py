@@ -1,10 +1,11 @@
 import re
 import logging
+
 from bs4 import BeautifulSoup
-from elinks_hooks.rules import load_hooks, FormatActions, FollowActions, \
-        GotoActions, QuitActions
 
 from elinks_hooks.log import init_logger
+from elinks_hooks.rules import load_hooks, FormatActions, FollowActions, \
+        GotoActions, QuitActions
 
 init_logger()
 log = logging.getLogger(__name__)
