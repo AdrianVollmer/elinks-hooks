@@ -36,16 +36,22 @@ def pre_format_html_hook(url, html):
 
 def follow_url_hook(url):
     for h in hooks['follow_url']:
-        if re.match(h['url'], url):
+        if re.search(h['url'], url):
             modifier = getattr(FollowActions, h['name'])
-            return modifier(**h['args'])
+            new_url = modifier(url, **h['args'])
+
+            log.info("follow_url: %s -> %s" % (url, new_url))
+
+            return new_url
 
 
 def goto_url_hook(url):
     for h in hooks['goto_url']:
-        if re.match(h['url'], url):
+        if re.search(h['url'], url):
             modifier = getattr(GotoActions, h['name'])
-            return modifier(**h['args'])
+            new_url = modifier(url, **h['args'])
+            log.info("goto_url: %s -> %s" % (url, new_url))
+            return new_url
 
 
 def quit_hook():
