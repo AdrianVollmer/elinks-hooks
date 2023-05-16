@@ -158,10 +158,23 @@ class FormatActions(object):
 
 
 class FollowActions(object):
-    pass
+    @staticmethod
+    def add_parameter(url, key=None, value=None):
+        import urllib.parse as urlparse
+        from urllib.parse import urlencode
+        url_parts = list(urlparse.urlparse(url))
+        query = dict(urlparse.parse_qsl(url_parts[4]))
+        query.update({key: value})
+        url_parts[4] = urlencode(query)
+        result = urlparse.urlunparse(url_parts)
+        return result
+
+    @staticmethod
+    def replace(url, text=None, sub=None):
+        return url.replace(text, sub)
 
 
-class GotoActions(object):
+class GotoActions(FollowActions):
     pass
 
 
