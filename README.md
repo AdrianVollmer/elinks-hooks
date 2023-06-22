@@ -9,7 +9,7 @@ Installation
 
 ```console
 $ git clone https://github.com/AdrianVollmer/elinks-hooks.git
-$ ln -s $(pwd)/elinks-hooks/elinks_hooks ~/config/elinks/
+$ ln -s $(pwd)/elinks-hooks/elinks_hooks ~/.config/elinks/
 $ echo 'from elinks_hooks import *  # noqa' > ~/.config/elinks/hooks.py
 ```
 
