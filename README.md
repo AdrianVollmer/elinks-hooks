@@ -40,6 +40,7 @@ optimized to be read with a full GUI browser, one sees lots of superflous
 HTML elements. This collection of scripts allows me to display just the meat
 of the article, or redirect twitter URLs to Nitter, etc.
 
+As a side effect, pretty much all ads and other distractions are filtered.
 
 License
 -------
